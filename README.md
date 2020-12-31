@@ -1,4 +1,5 @@
-# go-schedule
+# go-schedule ![CI](https://github.com/mcneilcode/go-schedule/workflows/CI/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/mcneilcode/go-schedule)](https://goreportcard.com/report/github.com/mcneilcode/go-schedule)
+
 Launch a go function(s) on a schedule.
 
 # Usage
