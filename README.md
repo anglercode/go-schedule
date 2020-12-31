@@ -24,8 +24,8 @@ func someOtherFunc(ctx context.Context) {
 func main() {
 	ctx := context.Background()
 	worker := schedule.New()
-    worker.Add(ctx, someFunc, time.Second*time.Duration(5))
-    worker.Add(ctx, someOtherFunc, time.Second*time.Duration(15))
+	worker.Add(ctx, someFunc, time.Second*time.Duration(5))
+	worker.Add(ctx, someOtherFunc, time.Second*time.Duration(15))
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt, os.Interrupt)
 	<-quit
