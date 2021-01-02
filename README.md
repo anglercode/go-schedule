@@ -1,15 +1,23 @@
-# go-schedule ![CI](https://github.com/mcneilcode/go-schedule/workflows/Builds/badge.svg) [![Go Report Card](https://goreportcard.com/badge/github.com/mcneilcode/go-schedule)](https://goreportcard.com/report/github.com/mcneilcode/go-schedule)
+# go-schedule ![CI](https://github.com/mcneilcode/go-schedule/workflows/Builds/badge.svg) [![GoDoc](https://godoc.org/github.com/mcneilcode/go-schedule?status.svg)](https://godoc.org/github.com/mcneilcode/go-schedule) [![Go Report Card](https://goreportcard.com/badge/github.com/mcneilcode/go-schedule)](https://goreportcard.com/report/github.com/mcneilcode/go-schedule)
 
 Launch a go function(s) on a schedule.
 
 # Usage
 
+Sample usage where two functions get scheduled on different timers,
+the first runs 5 seconds, the second every 15 seconds:
+
 ```go
+package main
+
 import (
-    "context"
-    "os"
-    "os/signal"
-    "github.com/mcneilcode/go-schedule"
+	"context"
+	"fmt"
+	"os"
+	"os/signal"
+	"time"
+
+	schedule "github.com/mcneilcode/go-schedule"
 )
 
 func someFunc(ctx context.Context) {
